@@ -12,12 +12,13 @@ node {
 
      stage('Docker Initialize'){
         def dockerHome = tool 'myDocker'
-        env.PATH = "/var/jenkins_home/tools/org.jenkinsci.plugins.docker.commons.tools.DockerTool/myDocker/bin/docker"
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
      }
      
-//      stage('Docker which'){
-//         sh 'which docker'
-//      }
+     stage('Docker which'){
+        sh 'which docker'
+        sh 'docker image ls'
+     }
 
      stage('Docker Build Image'){
         sh 'docker build -t berkansasmaz/bestcloudforme-internship-application .'

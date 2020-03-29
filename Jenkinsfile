@@ -15,9 +15,9 @@ node {
         env.PATH = "/var/jenkins_home/tools/org.jenkinsci.plugins.docker.commons.tools.DockerTool/myDocker/bin/docker"
      }
      
-     stage('Docker which'){
-        sh 'which docker'
-     }
+//      stage('Docker which'){
+//         sh 'which docker'
+//      }
 
      stage('Docker Build Image'){
         sh 'docker build -t berkansasmaz/bestcloudforme-internship-application .'

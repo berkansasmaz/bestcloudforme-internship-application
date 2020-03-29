@@ -11,11 +11,6 @@ node {
 //         def mvnCMD = "${mvnHome}/bin/mvn"
 //         sh label: '', script: "${mvnCMD} clean package"
 //     }
-
-    stage("setup_env") {
-        sh 'apt-get update -y'
-        sh 'apt-get install -y'
-    }
         
     stage("Fix the permission issue") {
         agent any
@@ -23,6 +18,11 @@ node {
             sh "sudo chown root:jenkins /run/docker.sock"
         }
     }
+    
+    stage("setup_env") {
+        sh 'apt-get update -y'
+        sh 'apt-get install -y'
+    }    
     
      stage('Docker Initialize'){
 //         sh "sudo chown jenkins: -R \$PWD/"

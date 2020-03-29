@@ -13,12 +13,7 @@ node {
      stage('Docker Initialize'){
         def dockerHome = tool 'myDocker'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
-     }
-     
-     stage('Docker which'){
-        sh 'which docker'
-        sh 'docker image ls'
-     }
+     }     
 
      stage('Docker Build Image'){
         sh 'docker build -t berkansasmaz/bestcloudforme-internship-application .'

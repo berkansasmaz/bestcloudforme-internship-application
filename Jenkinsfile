@@ -1,7 +1,7 @@
 node {
 
     stage('SCM Checkout'){
-        git credentialsId: 'ed29f538-e3c6-4269-8a50-4c8123667874', url: 'https://github.com/berkansasmaz/bestcloudforme-internship-application'
+        git credentialsId: '2f511eae-b599-4ab9-820a-b0e195a99e2b', url: 'https://github.com/berkansasmaz/bestcloudforme-internship-application'
     }
     
     stage('MVN Package'){

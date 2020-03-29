@@ -14,17 +14,18 @@ node {
      stage('Docker Initialize'){
         def dockerHome = tool name: 'myDocker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
-     }     
-
-     stage('Docker Build Image'){
         sh 'docker build -t berkansasmaz/bestcloudforme-internship-application .'
      }     
-        
-      stage('Docker Push Image'){
-        withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
-             sh "docker login -u berkansasmaz -p ${dockerHubPwd}"
-        }
-        
-        sh 'docker push berkansasmaz/bestcloudforme-internship-application'
-      } 
+
+//      stage('Docker Build Image'){
+//         sh 'docker build -t berkansasmaz/bestcloudforme-internship-application .'
+//      }     
+//         
+//       stage('Docker Push Image'){
+//         withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
+//              sh "docker login -u berkansasmaz -p ${dockerHubPwd}"
+//         }
+//         
+//         sh 'docker push berkansasmaz/bestcloudforme-internship-application'
+//       } 
 }

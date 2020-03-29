@@ -12,7 +12,7 @@ node {
 
      stage('Docker Initialize'){
         def dockerHome = tool 'myDocker'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
+        env.PATH = "/var/jenkins_home/tools/org.jenkinsci.plugins.docker.commons.tools.DockerTool/myDocker/bin/docker"
      }
      
      stage('Docker which'){

@@ -14,6 +14,10 @@ node {
         def dockerHome = tool 'myDocker'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
      }
+     
+     stage('Docker which'){
+        sh 'which docker'
+     }
 
      stage('Docker Build Image'){
         sh 'docker build -t berkansasmaz/bestcloudforme-internship-application .'

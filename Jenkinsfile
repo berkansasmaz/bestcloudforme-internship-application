@@ -13,6 +13,7 @@ node {
 //     }
 
      stage('Docker Initialize'){
+        sh "sudo chown jenkins: -R \$PWD/"
         def dockerHome = tool name: 'myDocker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
      }     

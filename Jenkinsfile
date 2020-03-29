@@ -12,8 +12,20 @@ node {
 //         sh label: '', script: "${mvnCMD} clean package"
 //     }
 
+    stage("setup_env") {
+        sh 'apt-get update -y'
+        sh 'apt-get install -y'
+    }
+        
+    stage("Fix the permission issue") {
+        agent any
+        steps {
+            sh "sudo chown root:jenkins /run/docker.sock"
+        }
+    }
+    
      stage('Docker Initialize'){
-        sh "sudo chown jenkins: -R \$PWD/"
+//         sh "sudo chown jenkins: -R \$PWD/"
         def dockerHome = tool name: 'myDocker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
         env.PATH = "${dockerHome}/bin:${env.PATH}"
      }     

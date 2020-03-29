@@ -16,7 +16,7 @@ node {
         def dockerHome = tool name: 'myDocker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
         def dcCMD = "${dockerHome}/bin:${env.PATH}"
         env.PATH = "${dockerHome}/bin:${env.PATH}"
-        sh 'dcCMD image ls'
+        sh "${dcCMD} image ls"
      }     
 
      stage('Docker Build Image'){

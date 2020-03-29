@@ -11,10 +11,10 @@ node {
         sh label: '', script: "${mvnCMD} clean package"
     }
 
-//      stage('Docker Initialize'){
-//         def dockerHome = tool 'myDocker'
-//         env.PATH = "${dockerHome}/bin:${env.PATH}"
-//      }     
+     stage('Docker Initialize'){
+        def dockerHome = tool name: 'myDocker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
+        env.PATH = "${dockerHome}/bin:${env.PATH}"
+     }     
 
      stage('Docker Build Image'){
         sh 'docker build -t berkansasmaz/bestcloudforme-internship-application .'

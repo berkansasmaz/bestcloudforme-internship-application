@@ -15,4 +15,12 @@ node {
         }
         sh 'docker push berkansasmaz/bestcloudforme-internship-application'
       } 
+      
+      stage('Run Container on Dev Server'){
+        def dockerRun = 'docker run -p 8000:8080 -d --name bestcloudforme berkansasmaz/bestcloudforme-internship-application'
+          sshagent(['azure-bestcloudforme']) {
+              sh "ssh -o StrictHostKeyChecking=no berkansasmaz@13.89.57.174 ${dockerRun}"
+          }
+
+      }
 }

@@ -12,8 +12,6 @@
   </a>
 </p>
 
-> maintaner: https://github.com/gazgeek
-
 <p align="center">
 <img width="1440" alt="Ekran Resmi 2020-03-30 20 42 50" src="https://user-images.githubusercontent.com/31216880/77944141-17b4ba80-72c7-11ea-8f84-a94006c207e7.png">
 </p>

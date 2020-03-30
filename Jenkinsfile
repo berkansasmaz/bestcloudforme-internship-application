@@ -12,23 +12,23 @@ node {
 //         sh label: '', script: "${mvnCMD} clean package"
 //     }
         
-    stage("Fix the permission issue") {
-        agent any
-        steps {
-            sh "sudo chown root:jenkins /run/docker.sock"
-        }
-    }
-    
-    stage("setup_env") {
-        sh 'apt-get update -y'
-        sh 'apt-get install -y'
-    }    
-    
-     stage('Docker Initialize'){
-//         sh "sudo chown jenkins: -R \$PWD/"
-        def dockerHome = tool name: 'myDocker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
-        env.PATH = "${dockerHome}/bin:${env.PATH}"
-     }     
+//     stage("Fix the permission issue") {
+//         agent any
+//         steps {
+//             sh "sudo chown root:jenkins /run/docker.sock"
+//         }
+//     }
+//     
+//     stage("setup_env") {
+//         sh 'apt-get update -y'
+//         sh 'apt-get install -y'
+//     }    
+//     
+//      stage('Docker Initialize'){
+//          sh "sudo chown jenkins: -R \$PWD/"
+//         def dockerHome = tool name: 'myDocker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
+//         env.PATH = "${dockerHome}/bin:${env.PATH}"
+//      }     
 
      stage('Docker Build Image'){
         sh 'docker build -t berkansasmaz/bestcloudforme-internship-application .'

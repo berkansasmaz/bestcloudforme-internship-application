@@ -1,5 +1,8 @@
 <h1 align="center">Welcome to bestcloudforme-internship-application 👋</h1>
 <p>
+  
+  ![build](https://github.com/berkansasmaz/bestcloudforme-internship-application/workflows/Docker%20Image%20CI/badge.svg?branch=master)
+<img alt="Version" src="https://img.shields.io/badge/version-0.5-blue.svg?cacheSeconds=2592000" />
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href="https://github.com/berkansasmaz/bestcloudforme-internship-application/blob/master/README.md" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />

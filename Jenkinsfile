@@ -19,7 +19,7 @@ node {
       stage('Run Container on Dev Server'){
         def dockerRun = 'docker run -p 8000:8080 -d --name bestcloudforme berkansasmaz/bestcloudforme-internship-application'
           sshagent(['dev-server']) {
-              sh "ssh -o StrictHostKeyChecking=no -i ~/Desktop/berkan.pem  ec2-user@172.31.22.6 ${dockerRun}"
+              sh "ssh -o StrictHostKeyChecking=no -i ~/Desktop/berkan.pem  ec2-user@ec2-18-130-173-120.eu-west-2.compute.amazonaws.com ${dockerRun}"
           }
       }
 }

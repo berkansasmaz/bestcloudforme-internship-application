@@ -17,6 +17,6 @@ node {
       
       stage('Run Container on Dev Server'){
         def dockerRun = 'docker run -p 8000:8080 -d --name bestcloudforme berkansasmaz/bestcloudforme-internship-application'
-              sh "ssh -i ~/Desktop/berkan.pem  ec2-user@ec2-18-130-173-120.eu-west-2.compute.amazonaws.com ${dockerRun}"
+              sh "ssh -i ~/Desktop/berkan.pem  ec2-user@ec2-52-56-102-57.eu-west-2.compute.amazonaws.com ${dockerRun}"
       }
 }

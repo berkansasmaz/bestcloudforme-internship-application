@@ -8,12 +8,12 @@ node {
         sh 'docker build -t berkansasmaz/bestcloudforme-internship-application .'
      }     
         
-//       stage('Docker Push Image'){
-//         withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
-//              sh "docker login -u berkansasmaz -p ${dockerHubPwd}"
-//         }
-//         sh 'docker push berkansasmaz/bestcloudforme-internship-application'
-//       } 
+      stage('Docker Push Image'){
+        withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
+             sh "docker login -u berkansasmaz -p ${dockerHubPwd}"
+        }
+        sh 'docker push berkansasmaz/bestcloudforme-internship-application'
+      } 
       
       stage('Run Container on Dev Server'){
         def dockerRun = 'docker run -p 80:8080 -d --rm --name bestcloudforme berkansasmaz/bestcloudforme-internship-application'

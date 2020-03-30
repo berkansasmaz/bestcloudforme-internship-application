@@ -1,5 +1,4 @@
 node {
-
     stage('SCM Checkout'){
         git credentialsId: 'github', url: 'https://github.com/berkansasmaz/bestcloudforme-internship-application'
         git (credentialsId: 'github', url: 'https://github.com/berkansasmaz/bestcloudforme-internship-application', branch: 'dev')

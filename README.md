@@ -24,6 +24,10 @@
 
 ```sh
 git clone https://github.com/berkansasmaz/bestcloudforme-internship-application.git
+
+OR
+
+docker pull berkansasmaz/bestcloudforme-internship-application
 ```
 
 ## Usage

@@ -4,6 +4,11 @@ node {
         git (credentialsId: 'github', url: 'https://github.com/berkansasmaz/bestcloudforme-internship-application', branch: 'dev')
     }
     
+     stage('Docker Initialize'){
+            def dockerHome = tool 'myDocker'
+            env.PATH = "${dockerHome}/bin:${env.PATH}"
+     }
+    
      stage('Docker Build Image'){
         sh 'docker build -t berkansasmaz/bestcloudforme-internship-application .'
      }     

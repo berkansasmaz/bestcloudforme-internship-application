@@ -43,7 +43,7 @@ docker run -p 8080:8080 -d --rm --name bestcloudforme berkansasmaz/bestcloudform
 ## TODO
 - [x] Görev 1 (Zorunludur)
 - [x] Görev 2
-- [ ] Görev 3 (Opsiyonel)
+- [x] Görev 3 (Opsiyonel)
 - [x] Görev 4 (Opsiyonel)
 
 ## Author

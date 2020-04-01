@@ -13,13 +13,13 @@ node {
         sh 'docker build -t berkansasmaz/bestcloudforme-internship-application .'
      }        
      
-     stage('Docker Push Image'){
-        withCredentials([string(credentialsId: 'docker-pwd2', variable: 'dockerHubPwd')]) {
-            sh "rm ~/.docker/config.json"
-             sh "docker login -u berkansasmaz -p ${dockerHubPwd}"
-        }
-        sh 'docker push berkansasmaz/bestcloudforme-internship-application'
-     } 
+//      stage('Docker Push Image'){
+//         withCredentials([string(credentialsId: 'docker-pwd2', variable: 'dockerHubPwd')]) {
+//             sh "rm ~/.docker/config.json"
+//              sh "docker login -u berkansasmaz -p ${dockerHubPwd}"
+//         }
+//         sh 'docker push berkansasmaz/bestcloudforme-internship-application'
+//      } 
       
      stage('Run Container on Dev Server'){
         def dockerStop = 'docker stop bestcloudforme'
